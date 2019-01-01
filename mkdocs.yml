@@ -1,5 +1,6 @@
 site_name: Golang
 nav:
     - Home: index.md
+    - 安装: install/install.md
     - 数组: about.md
 theme: readthedocs
