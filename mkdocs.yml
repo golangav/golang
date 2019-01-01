@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: Golang
+nav:
+    - Home: index.md
+    - 数组: about.md
+theme: readthedocs
