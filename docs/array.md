@@ -34,4 +34,87 @@ intArr[0]地址=0xc00007a020
 intArr[1]地址=0xc00007a028
 
 ```
-145
+## 4. 数组的遍历
+- for-range
+```angularjs
+intArr := [...]int{100, 200, 300}
+for i, v := range intArr {
+    fmt.Println(i, v)
+}
+```
+## 5. 数组的特点
+- 数组是多个相同类型数据的组合。
+- 其长度是固定的，不能变化。
+- 数组中的元素可以是任意数据类型，包括值类型和引用类型，但不能混用。
+- 数组在创建后，如果没有赋值则有默认值。
+- go的数组是值类型，在默认情况下是值传递，因此会进行值拷贝。
+```angularjs
+func test01(arr [3]int) {
+	arr[0] = 500
+}
+
+func main() {
+	intArr := [...]int{100, 200, 300}
+	test01(intArr)
+	fmt.Println(intArr)
+}
+--------------------
+[100 200 300]
+```
+- go数组也可以是引用传递
+```angularjs
+func test01(arr *[3]int) {
+	(*arr)[0] = 500
+}
+
+func main() {
+	intArr := [...]int{100, 200, 300}
+	test01(&intArr)
+	fmt.Println(intArr)
+}
+--------------------
+[500 200 300]
+```
+## 6. 数组的事例
+1. 随机生成5个数，并将其反转
+```angularjs
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	var intArr [3]int
+	rand.Seed(time.Now().UnixNano())
+	for i := 0; i < len(intArr); i++ {
+		intArr[i] = rand.Intn(100)
+	}
+	fmt.Println(intArr)
+
+	// 反转打印，交换次数是len(intArr / 2)
+	temp := 0 // 做一个临时变量
+	for i := 0; i < len(intArr)/2; i++ {
+		temp = intArr[len(intArr)-1-i]
+		intArr[len(intArr)-1-i] = intArr[i]
+		intArr[i] = temp
+	}
+	fmt.Println(intArr)
+}
+----------------------
+[82 98 38 37]
+[37 38 98 82]
+```
+
+
+151
+
+
+
+
+
+
+
+
