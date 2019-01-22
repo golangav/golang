@@ -76,7 +76,9 @@ func main() {
 [500 200 300]
 ```
 ## 6. 数组的事例
-1. 随机生成5个数，并将其反转
+
+
+1>. 随机生成5个数，并将其反转
 ```angularjs
 package main
 
@@ -108,9 +110,29 @@ func main() {
 [37 38 98 82]
 ```
 
+2>. 求出一个数组的最大值，并打印其下标
+```angularjs
+package main
 
-151
+import "fmt"
 
+func main() {
+	//1. 假定第一个元素就是最大值，下标为0
+	//2. 然后从第二个元素循环比较，如果发现更大则交换
+	var intArr = [5]int{1, -1, 9, 99, 11}
+	maxVal := intArr[0]
+	maxValIndex := 0
+	for i := 1; i < len(intArr); i++ {
+		if intArr[i] > maxVal {
+			maxVal = intArr[i]
+			maxValIndex = i
+		}
+	}
+	fmt.Printf("maxVal=%v maxValIndex=%v", maxVal, maxValIndex)
+}
+--------------------
+maxVal=99 maxValIndex=3
+```
 
 
 
