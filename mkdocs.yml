@@ -4,4 +4,5 @@ nav:
     - 安装: install/install.md
     - 数组: array.md
     - 切片: slice.md
+    - 排序: sort.md
 theme: readthedocs
