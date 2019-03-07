@@ -28,3 +28,65 @@
 
 ## 4. 冒泡排序
 
+![avatar](img/bubble_sort.png)
+
+```angularjs
+package main
+
+import "fmt"
+
+// 因为数组是值类型，所以需要加*
+func Bubble_sort(arr *[5]int) {
+	fmt.Println("排序前arr=", (*arr))
+	temp := 0
+
+	for i := 0; i < len(*arr)-1; i++ {
+		for j := 0; j < len(*arr)-1-i; j++ {
+			if (*arr)[j] > (*arr)[j+1] {
+				temp = (*arr)[j]
+				(*arr)[j] = (*arr)[j+1]
+				(*arr)[j+1] = temp
+			}
+		}
+	}
+	fmt.Println("排序后arr=", (*arr))
+}
+
+func main() {
+	arr := [5]int{24, 69, 80, 57, 13}
+	Bubble_sort(&arr)
+}
+
+```
+
+## 5. 二分查找
+
+```angularjs
+package main
+
+import "fmt"
+
+func BinaryFind(arr *[6]int, leftIndex int, rightIndex int, findVal int) {
+
+	if leftIndex > rightIndex {
+		fmt.Println("找不到")
+		return
+	}
+
+	mid := (leftIndex + rightIndex) / 2
+	if (*arr)[mid] > findVal {
+		BinaryFind(arr, leftIndex, mid-1, findVal)
+	} else if (*arr)[mid] < findVal {
+		BinaryFind(arr, mid+1, rightIndex, findVal)
+	} else {
+		fmt.Printf("找到了，下标为%v \n", mid)
+	}
+
+}
+
+func main() {
+	arr := [6]int{24, 69, 80, 90, 200, 500}
+	BinaryFind(&arr, 0, len(arr)-1, 500)
+}
+
+```

@@ -5,4 +5,5 @@ nav:
     - 数组: array.md
     - 切片: slice.md
     - 排序: sort.md
+    - 映射: map.md
 theme: readthedocs
