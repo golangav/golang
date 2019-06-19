@@ -6,4 +6,5 @@ nav:
     - 切片: slice.md
     - 排序: sort.md
     - 映射: map.md
+    - 结构体: struct.md
 theme: readthedocs

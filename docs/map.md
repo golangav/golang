@@ -40,3 +40,82 @@ obj := map[string]int{
 	"铅笔": 20,
 }
 ```
+## 3. map切片
+```angularjs
+package main
+
+import "fmt"
+
+func main() {
+	var monsters []map[string]string
+	monsters = make([]map[string]string, 2)
+
+	// 第一个赋值
+	monsters[0] = make(map[string]string, 2)
+	monsters[0]["name"] = "牛魔王"
+	monsters[0]["age"] = "500"
+
+	// 动态增加一个monster
+	newMonster := map[string]string{
+		"name": "xx",
+		"age":  "18",
+	}
+	monsters = append(monsters, newMonster)
+	fmt.Println(monsters)
+}
+```
+## 4. map排序
+```angularjs
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	map1 := make(map[int]int, 10)
+	map1[3] = 2
+	map1[1] = 3
+	map1[2] = 10
+	fmt.Println(map1)
+
+	// 先按key排序
+	var keys []int
+	for k, _ := range map1 {
+		keys = append(keys, k)
+	}
+	sort.Ints(keys)
+	fmt.Println(keys)
+
+	// map 排序
+	for _, v := range keys {
+		fmt.Printf("map1[%v]=%v \n", v, map1[v])
+	}
+}
+
+-------------------
+map[3:2 1:3 2:10]
+[1 2 3]
+map1[1]=3
+map1[2]=10
+map1[3]=2
+```
+
+## 5. map试用细节
+
+- map是引用类型
+- map的容量到达后，再想map增加元素会自动扩容
+- map的value也经常使用struct类型，更适合管理复杂的数据
+
+
+
+
+
+
+
+
+
+
+
+
