@@ -1,4 +1,4 @@
-## Go语言特点
+## 1. Go语言特点
 
 go语言达到了既能达到静态编译语言的安全和性能，又打到了动态语言开发维护的高效率。
 使用一个表达式来形容go语言：Go=C+Python，说明go语言既有C静态语言程序的运行速度，又能达到python动态语言的快速开发。
@@ -17,7 +17,7 @@ go语言达到了既能达到静态编译语言的安全和性能，又打到了
 ```
 
 
-## mac安装
+## 2. mac安装
 
 ```
 # 下载解压
@@ -36,7 +36,7 @@ source ~/.bash_profile
 go version
 ```
 
-## 项目目录配置
+## 3. 目录结构
 
 ```
 mkdir -p ~/goproject/src/go_code
@@ -75,27 +75,5 @@ git clone git@github.com:golang/net.git --depth 1
 ```
 
 
-
-## VSCode配置
-
-```angularjs
-        "go.buildOnSave": "workspace",
-        "go.lintOnSave": "package",
-        "go.vetOnSave": "package",
-        "go.buildTags": "",
-        "go.buildFlags": [],
-        "go.lintFlags": [],
-        "go.vetFlags": [],
-        "go.coverOnSave": false,
-        "go.useCodeSnippetsOnFunctionSuggest": false,
-        "go.formatOnSave": true,
-        "go.formatTool": "goreturns",
-        "go.goroot": "/usr/local/go",
-        "go.gopath": "/Users/shaowei/go",
-        "go.gocodeAutoBuild": false
-
-```
-
-## 目录结构
 
 

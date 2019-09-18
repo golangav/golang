@@ -1,10 +1,13 @@
 site_name: Golang
 nav:
     - Home: index.md
-    - 安装: install/install.md
+    - 安装: install.md
+    - 变量: variable.md
+    - 整数: int.md
     - 数组: array.md
     - 切片: slice.md
     - 排序: sort.md
     - 映射: map.md
     - 结构体: struct.md
+    - 方法: method.md
 theme: readthedocs
